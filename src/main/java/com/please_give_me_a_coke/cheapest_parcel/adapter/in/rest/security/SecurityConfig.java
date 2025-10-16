@@ -18,7 +18,7 @@ import java.util.List;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) {
         http
                 .authorizeHttpRequests(authorize -> authorize
                     .requestMatchers("/parcels-prices/cheapest").permitAll()
