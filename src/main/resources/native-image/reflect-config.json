@@ -1,0 +1,32 @@
+[
+  {
+    "name": "com.please_give_me_a_coke.cheapest_parcel.domain.model.ParcelsPrices",
+    "allPublicMethods": true,
+    "allPublicConstructors": true
+  },
+  {
+    "name": "com.please_give_me_a_coke.cheapest_parcel.domain.model.ParcelsPrices$Carrier",
+    "allPublicMethods": true,
+    "allPublicConstructors": true
+  },
+  {
+    "name": "com.please_give_me_a_coke.cheapest_parcel.domain.model.ParcelsPrices$Service",
+    "allPublicMethods": true,
+    "allPublicConstructors": true
+  },
+  {
+    "name": "com.please_give_me_a_coke.cheapest_parcel.domain.model.ParcelsPrices$Region",
+    "allPublicMethods": true,
+    "allPublicConstructors": true
+  },
+  {
+    "name": "com.please_give_me_a_coke.cheapest_parcel.domain.model.ParcelsPrices$Agent",
+    "allPublicMethods": true,
+    "allPublicConstructors": true
+  },
+  {
+    "name": "com.please_give_me_a_coke.cheapest_parcel.domain.model.ParcelsPrices$WeightBasedRate",
+    "allPublicMethods": true,
+    "allPublicConstructors": true
+  }
+]

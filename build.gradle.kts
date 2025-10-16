@@ -26,13 +26,18 @@ repositories {
 	maven { url = uri("https://repo.spring.io/snapshot") }
 }
 
+val mapstruct = "1.6.3"
+
 dependencies {
+	implementation("org.mapstruct:mapstruct:$mapstruct")
+	implementation("org.springframework.boot:spring-boot-starter-restclient")
 	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
-	implementation("org.springframework.boot:spring-boot-starter-webmvc")
+	implementation("org.springframework.boot:spring-boot-starter-web")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("com.h2database:h2")
+	annotationProcessor("org.mapstruct:mapstruct-processor:$mapstruct")
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
