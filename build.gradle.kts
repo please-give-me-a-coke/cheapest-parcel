@@ -47,3 +47,14 @@ dependencies {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.bootBuildImage {
+	builder.set("paketobuildpacks/builder-jammy-java-tiny")
+	buildpacks.set(listOf("docker.io/paketobuildpacks/adoptium"))
+	imageName.set("pleasegivemeacoke/cheapest-parcel:${project.version}")
+	imagePlatform.set("linux/arm64")
+	environment.set(mapOf(
+		"BP_NATIVE_IMAGE" to "true"
+	))
+	verboseLogging.set(true)
+}
