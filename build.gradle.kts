@@ -50,7 +50,7 @@ tasks.withType<Test> {
 
 tasks.bootBuildImage {
 	builder.set("paketobuildpacks/builder-jammy-java-tiny")
-	buildpacks.set(listOf("paketo-buildpacks/native-image"))
+//	buildpacks.set(listOf("paketobuildpacks/native-image"))
 	imageName.set("pleasegivemeacoke/cheapest-parcel:${project.version}")
 	imagePlatform.set("linux/arm64")
 	environment.set(mapOf(
