@@ -63,7 +63,7 @@ jobs:
           TAG=0.0.1-SNAPSHOT
           docker pull $IMAGE:$TAG
           docker run \
-            -p 8080:8080 $IMAGE:$TAG \
+            -p 8082:8080 $IMAGE:$TAG \
             --parcels.prices.urls=${{ secrets.PARCELS_PRICES_URLS }}
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
