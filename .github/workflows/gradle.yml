@@ -48,6 +48,25 @@ jobs:
         docker tag cheapest-parcel:0.0.1-SNAPSHOT $IMAGE:0.0.1-SNAPSHOT
         docker push $IMAGE:0.0.1-SNAPSHOT
 
+  run_on_self_hosted:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Docker Login (self-hosted)
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Pull image and run container
+        run: |
+          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/cheapest-parcel
+          TAG=0.0.1-SNAPSHOT
+          docker pull $IMAGE:$TAG
+          docker run \
+            -p 8080:8080 $IMAGE:$TAG \
+            --parcels.prices.urls=${{ secrets.PARCELS_PRICES_URLS }}
+
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
     #
