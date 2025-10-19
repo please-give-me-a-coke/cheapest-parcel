@@ -49,8 +49,8 @@ tasks.withType<Test> {
 }
 
 tasks.bootBuildImage {
-	builder.set("paketobuildpacks/builder-jammy-buildpackless-tiny")
-	buildpacks.set(listOf("docker.io/paketo-buildpacks/java"))
+	builder.set("paketobuildpacks/builder-jammy-java-tiny")
+	buildpacks.set(listOf("paketo-buildpacks/native-image"))
 	imageName.set("pleasegivemeacoke/cheapest-parcel:${project.version}")
 	imagePlatform.set("linux/arm64")
 	environment.set(mapOf(
