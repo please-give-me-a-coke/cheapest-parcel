@@ -54,7 +54,8 @@ tasks.bootBuildImage {
 	imageName.set("pleasegivemeacoke/cheapest-parcel:${project.version}")
 	imagePlatform.set("linux/arm64")
 	environment.set(mapOf(
-		"BP_NATIVE_IMAGE" to "true"
+		"BP_NATIVE_IMAGE" to "true",
+		"BP_NATIVE_IMAGE_BUILD_ARGUMENTS" to "-march=armv8-a"
 	))
 	verboseLogging.set(true)
 }
