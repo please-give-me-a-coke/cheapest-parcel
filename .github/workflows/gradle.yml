@@ -45,7 +45,6 @@ jobs:
     - name: Push images
       run: |
         IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/cheapest-parcel
-        docker tag cheapest-parcel:0.0.1-SNAPSHOT $IMAGE:0.0.1-SNAPSHOT
         docker push $IMAGE:0.0.1-SNAPSHOT
 
   run_on_self_hosted:
