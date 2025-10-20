@@ -35,7 +35,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cfg = new CorsConfiguration();
-        cfg.setAllowedOrigins(List.of("http://localhost:3000")); // todo
+        cfg.setAllowedOrigins(List.of("http://localhost:3000", "https://next-cheapest-parcel.vercel.app"));
         cfg.setAllowedMethods(List.of("GET"));
         cfg.setAllowedHeaders(List.of("*"));
         cfg.setAllowCredentials(true);
