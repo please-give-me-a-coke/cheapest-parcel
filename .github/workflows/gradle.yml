@@ -62,9 +62,13 @@ jobs:
           IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/cheapest-parcel
           TAG=0.0.1-SNAPSHOT
           docker pull $IMAGE:$TAG
-          docker run \
-            -p 8082:8080 $IMAGE:$TAG \
-            --parcels.prices.urls=${{ secrets.PARCELS_PRICES_URLS }}
+          docker rm -f cheapest-parcel 2>/dev/null || true && \
+          docker run -d --name cheapest-parcel \
+          --pull always \
+          -p 8082:8080 \
+          pleasegivemeacoke/cheapest-parcel:0.0.1-SNAPSHOT \
+          --parcels.prices.urls=${{ secrets.PARCELS_PRICES_URLS }}
+
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
