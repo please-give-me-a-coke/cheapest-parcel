@@ -38,7 +38,7 @@ public class SecurityConfig {
         cfg.setAllowedOrigins(List.of(
                 "http://localhost:3000",
                 "http://localhost:8080",
-                "https://next-cheapest-parcel.vercel.app"));
+                "https://cheapest-parcel.vercel.app"));
         cfg.setAllowedMethods(List.of("GET"));
         cfg.setAllowedHeaders(List.of("*"));
         cfg.setAllowCredentials(true);
