@@ -6,8 +6,8 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum ServiceType {
-    STORE_TO_HOUSE("store_to_house"),
-    STORE_TO_STORE("store_to_store");
+    STORE_TO_HOUSE("store-to-house"),
+    STORE_TO_STORE("store-to-store");
 
     private final String value;
 }
